@@ -1,0 +1,485 @@
+https://docs.stripe.com/payments/checkout/migration
+https://docs.docker.com/desktop/install/windows-install/
+https://mkyong.com/docker/docker-spring-boot-examples/
+
+Webex meeting recording: SynergisticIT's Personal Room-20240214 1931-1
+Password: BgmGVyM6
+Recording link: https://techbraincamp.webex.com/techbraincamp/ldr.php?RCID=9972cc5e2714c5c74cc8b0976fb39175
+
+https://rollbar.com/blog/how-to-use-chatgpt-api-with-java/
+
+
+$.ajax({
+            url: "/user/"+ userName,
+            type: 'GET',
+                dataType: 'json', // added data type
+                success: function(data) {
+                    userId = data.userId;
+                    alert("userId: "+ userId);
+                }
+        });
+
+
+
+        ------------
+$.ajax({
+           url: "/saveDriver",
+           type: "POST",
+           dataType: "json",
+           contentType: "application/json; charset=utf-8",
+           data: JSON.stringify(driver),
+           success: function (result) {
+               // when call is sucessfull
+               alert("Thank you for your information. Please fill in your vehicle information.");
+
+               $("#street").val("");
+               $("#city").val("");
+               $$("#state").val("");
+               $("#country").val("");
+               $("#zipCode").val("");
+               $("#driverLicenseNo").val("");
+            },
+            error: function (err) {
+            // check the err for error details
+            }
+         }); // ajax call closing
+
+
+
+         --------
+         if(($("#modal_driverName").val()==null) && ($("#modal_street").val()==null) && ($("#modal_city").val()=="") && ($("#modal_state").val()=="")
+                         && ($("#modal_country").val()=="") && ($("#modal_zipcode").val()=="") && ($("#modal_driverLicenseNo").val()=="")){
+                         alert("please fill in the form...");
+                         return;
+
+      --------------
+       $("table").on('click','.remove',function() {
+                      $(this).parent().parent().remove();
+                      return false;
+                  });
+
+       -----------
+       var member = new Object();
+               member.firstName = $(this).parent().parent().children("td").eq(0).text();
+               member.lastName = $(this).parent().parent().children("td").eq(1).text();
+               member.DOB = $(this).parent().parent().children("td").eq(2).text();
+               member.gender =  $("#tbl-memberList input[type='radio']:checked").val();
+               member.licenseNo = $(this).parent().parent().children("td").eq(4).text();
+               memberList.push(member);
+
+  ------
+  $("#TableView tr.item").each(function() {
+      var quantity1=$(this).find("input.name").val();
+      var quantity2=$(this).find("input.id").val();
+  })
+ ---------------
+
+ $("modal_tbl_members").append("<tr><td>"+member.firstname+"</td><td>"+member.lastname+"</td><td>"+member.DOB+"</td><td><a class='remove' href='#'>Remove</a></td><td><a class='add' href='#'>Add</a></td><td><a class='save' href='#'>Save</a></td></tr>")
+                                                    return false;
+
+ -------
+ var booking1 = new Object();
+
+                                 booking1.hotelId = bookingHotelId;
+                                 booking1.hotelRoomId = bookingHotelRoomId;
+                                 booking1.noRooms = bookingNoRooms;
+
+                                 let guestSet = new Set();
+                                 booking1.guests = new Array();
+                                 for(let item of guestList) {
+
+                                     booking1.guests.push(item);
+                                 }
+----
+'<tr><td><ul>' +
+                                '<li>'+ val.name + '</li>'+
+                           '</ul></td></tr>'
+ -----
+ $("#selectionPlan").append(
+                            "<tr><td style='display:none'>" + val.planId + "</td></tr>"  +
+                            '<tr><td><h3>' + val.name + '</h3></td></tr>'  +
+                            '<tr><td>' + val.planType + '</td></tr>'
+                        );
+                        $.each(val.policies,function(index,val){
+                            $("#selectionPlan").append(
+                                 '<tr><td>' + val.name + '</td></tr>'
+                            );
+
+                        });
+-----
+$.ajax({
+        type:'GET',
+        dataType:'json',
+        url: "/plan/" + id ,
+        success: function(data) {
+            $.each(data.policies,function(index,item){
+                $.each(item,function(index,val){
+                    $("#policyList").append(
+                        "<tr><td>" + val.name + "</td></tr>"
+                    )
+                });
+            });
+        }
+    });
+
+ ============
+ $.ajax({
+         url: "/plans",
+         type: 'GET',
+         dataType: 'json', // added data type
+         success: function(data) {
+             $.each(data, function(index,item) {
+                 $.each(item,function(index,val){
+                     let id = val.planId;
+
+                     $("#selectionPlan").append(
+                         "<tr><td style='display:none'>" + val.planId + "</td></tr>"  +
+                         "<tr><td><h3>" + val.name + "</h3></td></tr>" +
+                         "<tr><td>" + val.description + "</td></tr>" +
+                         "<tr><td>" + val.planType + "</td></tr>" +
+                         "<tr><td><ul id='"+id+"'></ul></td></tr>"
+                     );
+                 })
+             });
+         },
+         error: function(e) {
+             console.log(e.message);
+         }
+     }); <!-- Close Ajax -->
+
+
+     $.ajax({
+         type:'GET',
+         dataType:'json',
+         url: "/plan/" + 1 ,
+
+         success: function(data) {
+             $.each(data.policies,function(index,item){
+                 $.each(item,function(index,val){
+                     $("#1").append(
+                         "<li>" + val.name + "</li>"
+                     )
+                 });
+             });
+         }
+     });
+
+
+------
+<div id="planTab">
+            <h1>Choose your plan</h1>
+            <form id="planForm">
+                <table>
+                    <tr>
+                        <td class="tdQues" ><h5>Date want to start the insurance</h5></td>
+                    </tr>
+                    <tr>
+                        <td class="tdAns" ><input type = date id="desireStartDate" /></td>
+                    </tr>
+                    <tr>
+                        <td class="tdQues" ><h5>Which term do you want to use the insurance</h5></td>
+                    </tr>
+                    <tr>
+                        <td class="tdQues" id="select term">
+                            <label><input type="radio" name="term" value = "Short" />Short term</label>
+                            <label><input type="radio" name="term" value="Long" />Long term</label>
+                        </td>
+                    </tr>
+                </table>
+
+                <h5>Please select your plan</h5>
+                <div id="plan_list">
+
+                </div>
+                <input id="getAQuote" type="button" >Get A Quote
+            </form>
+        </div>
+-----
+$.ajax({
+                         url: "/saveDesiredPlan",
+                         type:'POST',
+                         dataType:'json',
+                         contentType: "application/json; charset=utf-8",
+                         data: JSON.stringify(desiredPlan),
+                         success: function (result) {
+                             alert("Complete Information...");
+                         },
+                         error: function (err) {
+                             // check the err for error details
+                        }
+
+                    });
+     ----------------
+
+     <!-- ********* Open REVIEW Modal  ******** -->
+             $("#tblAllBooking").on("click", ".btn-doReview",function(){
+                 var booking;
+                 let bookingId =  $(this).parent().parent().children("td").eq(0).text();
+
+                 <!-- *** find Review *** -->
+                 $.get("/findByBooking_BookingId/"+ bookingId,{
+                 },function(responseText){
+                      if(bookingId == responseText.booking.bookingId){
+                         alert("Customer already wrote a review.");
+                         $('#reviewModal').hide();
+                         return false;
+                      }
+                 });
+
+                 $("#booking_id").val(bookingId);
+                 var rates = [1,2,3,4,5];
+                 $.each(rates,function(index, val){
+                     $('#service_rating').append($('<option>',
+                        {value: val,text : val}
+                     ));
+                     $('#amenities_rating').append($('<option>',
+                        {value: val,text : val}
+                     ));
+                     $('#booking_process_rating').append($('<option>',
+                        {value: val,text : val}
+                     ));
+                     $('#wholeExp_rating').append($('<option>',
+                        {value: val,text : val}
+                     ));
+                     $('#overal_rating').append($('<option>',
+                        {value: val,text : val}
+                     ));
+                 });
+                 $("#reviewModal").toggle();
+
+                 <!-- Click to SUBMIT review -->
+                 $(".btn-submitReview").click(function(){
+                     alert("bookingId:"+ bookingId);
+                     var reviewObj = new Object();
+                     var bookingObj = new Object();
+                     <!-- *** Find Booking by Booking ID *** -->
+                     $.get("/findBooking/" + bookingId,{
+                     }, function(responseText){
+                         bookingObj = responseText;
+                         reviewObj.booking = bookingObj;
+                         alert(reviewObj.booking.bookingId);
+
+                         reviewObj.serviceRating = $('#service_rating').find(":selected").val();
+                         reviewObj.amenitiesRating = $('#amenities_rating').find(":selected").val();
+                         reviewObj.bookingProcessRating = $('#booking_process_rating').find(":selected").val();
+                         reviewObj.wholeExpRating = $('#wholeExp_rating').find(":selected").val();
+                         reviewObj.overallRating = $('#overal_rating').find(":selected").val();
+                         reviewObj.text = $("#comment").val();
+
+                         <!-- ***** SAVE REVIEW ***** -->
+                         $.ajax({
+                            url: "/saveReview",
+                            type: "POST",
+                            dataType: "json",
+                            contentType: "application/json; charset=utf-8",
+                            data: JSON.stringify(reviewObj),
+                            success: function (result) {
+                                // when call is sucessfull
+                                alert("Thank you for your review.");
+                                $("#reviewModal").hide()
+
+                             },
+                             error: function (err) {
+                             // check the err for error details
+                             }
+                         }); // ajax call closin
+                     });
+                 });
+
+
+
+
+             });
+---
+driver.gender = $("#driverForm input[type='radio']:checked").val();
+
+---
+let saveUserName = userName;
+        let saveFileName = $("file").val();
+        let saveStatus = $("status").val();
+        let saveComment = $("comment").val();
+
+        let documentDTO = new Object();
+        documentDTO.username = saveUserName;
+        documentDTO.fileName = saveFileName;
+        documentDTO.status = saveStatus;
+        documentDTO.comment = saveComment;
+
+        $.ajax({
+             url: "/documentDTO/save",
+             type:'POST',
+             dataType:'json',
+             contentType: "application/json; charset=utf-8",
+             data: JSON.stringify(documentDTO),
+             success: function (result) {
+                 alert("Complete Information...");
+             },
+             error: function (err) {
+                 // check the err for error details
+            }
+
+        });
+
+
+---
+<h5 style="margin-bottom:2px">Status</h5>
+                <div readonly="true" name="status" id="claimStatus">
+                    <label><input type="radio" name="status" value = "PENDING" />PENDING</label>
+                    <label><input type="radio" name="status" value="APPROVED" />APPROVED</label>
+                    <label><input type="radio" name="status" value="DECLINED" />DECLINED</label>
+                </div>
+
+---
+<!-- ******** Append claimList into the table ******** -->
+    $(".addDescription").click(function(event){
+        event.preventDefault()
+        let name = $("#descriptionName").val();
+        let cost = $("#cost").val();
+        let description = $("#description").val();
+
+        if(name != "" || cost != ""){
+
+            var newRow = $("<tr>");
+            newRow.append("<td><input id='ap_descriptionName' type='text' value='"+ name  +"'></td>");
+            newRow.append("<td><input id='ap_cost' type='text' value='"+ cost  +"'/></td>");
+            newRow.append("<td><input id='ap_description' type='text' value='"+ description  +"'/></td>");
+            newRow.append("<td><a class='remove' href='#'>Remove</a></td>")
+            $("#tbl-claimList tbody").append(newRow)
+
+            var claimList = new Object();
+            claimList.name = name;
+            claimList.cost = cost;
+            claimList.description = description;
+
+            claimDetailList.push(claimList);
+
+            $("#descriptionName").val("");
+            $("#cost").val("");
+            $("#description").val("");
+        }
+    });
+
+    $("#tbl-claimList").on('click','.remove',function() {
+        $(this).parent().parent().remove();
+        return false;
+    });
+
+    <!-- ******* Save Claim ****** -->
+    $("#saveClaim").click(function(){
+        let c_username = userName;
+        let c_claimTitle = $("#claimTitle").val();
+        let c_accidentDate = $("#claimDate").val();
+        let c_status = "PENDING";
+        let c_comment = $("#claimComment").val();
+
+        var formData = new FormData();
+            formData.append('files', $('#files')[0]);
+            formData.append('username', c_username);
+            formData.append('status', c_status);
+            formData.append('comment', c_comment);
+            formData.append('claimTitle', c_claimTitle);
+            formData.append('accidentDate', c_accidentDate);
+            formData.append('claimDetails', claimDetailList);
+
+
+            $.ajax({
+                url: '/claim/save',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    console.log('File uploaded successfully');
+                },
+                error: function(xhr, status, error) {
+                    console.error('Failed to upload file');
+                }
+            });
+
+    });
+
+----
+var status = $("#fileUploadForm input[type='radio']:checked").val();
+----
+
+$.ajax({
+        type:'GET',
+        dataType:'json',
+        url: "/documents/username/" + userName ,
+        success: function(data) {
+            $("#username").val(userName);
+            $.each(data,function(index,item){
+                $.each(item,function(index,val){
+                    $("#tbl_document").append(
+                       "<tr>"+
+                          "<td>"+val.id+"</td>"+
+                          "<td>"+val.username+"</td>"+
+                          "<td>" +val.fileName+"</td>"+
+                          "<td>" +val.comment+"</td>"+
+                          "<td>" +val.status+"</td>"+
+
+                          "<td><a class='tbl_approve' href='#'>Approve</a></td>"+
+                          "<td><a class='tbl_decline' href='#'>Decline</a></td>"+
+                       "</tr>"
+                    )
+                });
+            });
+        },
+        error: function(e) {
+           console.log(e.message);
+        }
+    }); <!-- Close Ajax -->
+---
+
+$.ajax({
+        type:'GET',
+        dataType:'json',
+        // url: "/claimsByUsername/" + userName ,
+        url: "/claimsByUsername/" + "bob" ,
+        success: function(data) {
+            $("#username").val(userName);
+            $.each(data,function(index,item){
+                $.each(item,function(index,val){
+                    $("#tbl_claims").append(
+                       "<tr>"+
+                          "<td>"+val.claimId+"</td>"+
+                          "<td>"+userName+"</td>"+
+                          "<td>" +val.claimTitle+"</td>"+
+                          "<td>"+val.accidentDate+"</td>"+
+                          "<td>" +val.itemDetailName+"</td>"+
+                          "<td>" +val.itemCost+"</td>"+
+                          "<td>" +val.fileName+"</td>"+
+                          "<td>" +val.status+"</td>"+
+
+                          "<td><a class='tbl_approve' href='#'>Approve</a></td>"+
+                          "<td><a class='tbl_decline' href='#'>Decline</a></td>"+
+
+                       "</tr>"
+                    )
+                });
+            });
+        },
+        error: function(e) {
+           console.log(e.message);
+        }
+    }); <!-- Close Ajax -->
+---
+        $("#tbl_document").on("click", ".tbl_download",function(){
+            let fileName =  $(this).parent().parent().children("td").eq(2).text();
+
+
+            $.ajax({
+                url: "/download_file/"+ fileName,
+                type: "GET",
+
+                success: function (result) {
+                    console.log('File uploaded successfully');
+
+                },
+                error: function(xhr, status, error) {
+                    console.error('Failed to upload file');
+                }
+            });
+        });
+
+---

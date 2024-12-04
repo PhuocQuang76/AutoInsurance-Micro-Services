@@ -1,0 +1,142 @@
+$.ajax({
+             type:'GET',
+             dataType:'json',
+             url: "/plan/" + planIdFromSelection ,
+             success: function(data) {
+                 selectedPlan = data;
+                 let desiredPlan = new Object();
+                 desiredPlan.purchasePeriod = purchasePeriod;
+                 desiredPlan.desireStartDate = desireStartDate;
+                 desiredPlan.plan = selectedPlan;
+                 desiredPlan.username = desiredPlanUserName;
+                 desiredPlan.plan.policies = selectedPlan.policies.policies;
+
+                 $.ajax({
+                     url: "/saveDesiredPlan",
+                     type:'POST',
+                     dataType:'json',
+                     contentType: "application/json; charset=utf-8",
+                     data: JSON.stringify(desiredPlan),
+                     success: function (result) {
+                         alert("Complete Information...");
+                     },
+                     error: function (err) {
+                         // check the err for error details
+                     }
+
+                 });
+             }
+        });
+
+-----
+Task 3 - Once payment is completed, send an email to the user with a link to upload the documents.
+ A user will upload the documentDTO.
+ Create a admin page to display all the insurance request, he will verify all the documentDTO and
+  if he feels everything is fine he will approve the policy and then email will trigger on the
+  registered email id with policy documentDTO
+
+
+  ----
+  task 4
+  Implement Claim Microservice
+
+  Claim Intimation - Intimate to the company that yu met an accident and upload mishap images
+  Raise A Claim - Bumper Replaced - 100$, Car Tail Ligth - 20$, Tyre was changed - 30$
+  Claim Approval - 100 - 90
+
+  ---@RequestMapping("/card")
+         public String card(Model model, Principal principal){
+             return "card";
+         }
+
+         \
+
+
+
+
+
+
+   ------
+
+   <script>
+   $(documentDTO).ready(function () {
+   var name = GetParameterValues('Name');
+   var id = GetParameterValues('ID');
+   alert("Hello " + name + " your ID is " + id);
+   function GetParameterValues(param) {
+   var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+   for (var i = 0; i < url.length; i++) {
+   var urlparam = url[i].split('=');
+   if (urlparam[0] == param) {
+   return urlparam[1];
+   }
+   }
+   }
+   });
+   </script>
+
+
+   <body>
+   <form id="form1" runat="server">
+   <div>
+   Name: <asp:TextBox runat="server" ID="txtName"></asp:TextBox>
+   <br />
+   ID: <asp:TextBox runat="server" ID="txtID"></asp:TextBox>
+   <br />
+   <br />
+   <asp:Button runat="server" ID="btnSubmit" Text="Submit" OnClick="btnSubmit_Click" />
+   </div>
+   </form>
+   </body>
+
+   https://www.domainname.com/url?parameter=value&parameter=value
+
+
+protected void Page_Load(object sender, EventArgs e)
+{
+}
+protected void btnSubmit_Click(object sender, EventArgs e)
+{
+Response.Redirect("WebForm2.aspx?Name="+txtName.Text+"&ID="+txtID.Text);
+}
+
+
+Here I have taken two variables, name and id which get their values from the URL query string.
+The function GetParameterValues() splits the parameter and its values from the URL and stores
+it in name and id variables.
+
+var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+
+for (var i = 0; i < url.length; i++) {
+var urlparam = url[i].split('=');
+if (urlparam[0] == param) {
+return urlparam[1];
+}
+}
+---------
+chatgpt
+https://rollbar.com/blog/how-to-use-chatgpt-api-with-java/
+
+----
+let updateStatus = 2;
+
+        let claimDTO = new Object();
+        claimDTO.claimId = claimId;
+        claimDTO.status = updateStatus;
+
+        $.ajax({
+            url: "/updateClaim",
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(claimDTO),
+            success: function (result) {
+               // when call is sucessfull
+
+            },
+            error: function (err) {
+
+               return;
+            }
+        }); // ajax call closing
+    });

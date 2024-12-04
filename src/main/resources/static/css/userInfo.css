@@ -1,0 +1,209 @@
+.driverInfo{
+    padding-top:150px;
+
+
+        padding-left: 100px;
+        color: black;
+        background-color: white;
+}
+.top-bar {
+    z-index:100;
+
+}
+.form-control {
+  background-color: #a6a6a6
+}
+#DOB{
+    margin-bottom:18px;
+}
+#gender{
+    height:40px;
+}
+.btn-primary{
+    height:30px;
+    background-color:#06b5d0;
+    font-weight:500;
+}
+
+
+.tdHead{
+    width:30%;
+    color:black;
+
+}
+.tdBody input{
+    width:100%;
+    background-color: #a6a6a6;
+    color:black;
+    padding:5px;
+}
+
+.tdBody input:focus{
+    width:100%;
+    background-color: #a6a6a6;
+    color:black;
+    padding:5px;
+}
+.tdBody input:focus{
+    width:100%;
+    background-color: red
+    ;
+    color:black;
+    padding:5px;
+}
+
+.ui-widget-content{
+    height:1400px;
+}
+
+#tabs{
+position: absolute;
+    width:100%;
+    height: fit-content;
+    margin-top: 160px;
+    margin-left: 0px;
+
+}
+
+input .form-control{
+    color:black;
+}
+
+
+input[type=password], input[type=text], select, textarea {
+background}
+
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 650px;
+    overflow-y: auto;
+}
+
+.ui-tabs .ui-tabs-panel{
+background:#f5f5f5bd;
+}
+
+.ui-tabs .ui-tabs-panel {
+background:none;
+}
+
+
+#planForm{
+    height:1000px;
+    font-size:0.8em;
+    background-color:#f5f5f5bd !important;
+}
+
+
+#tabs>.myTabs {
+    background: #f5f5f5bd !important;
+    margin-bottom: 20px;
+}
+
+.yourQuoteForm{
+
+    padding-top:150px !important;
+    color:black !important;
+    background-color:#f5f5f5bd !important;
+    margin-bottom: 20px;
+    height:1800px;
+    height:100%;
+
+ }
+
+
+.documentInfo{
+    padding-top: 150px;
+    padding-left: 100px;
+    color: black;
+    background-color:#f5f5f5bd !important;
+    height:100%;
+
+}
+.documentInfo input[type=text]{
+    width:300px;
+    height:30px;
+    font-size:15px;
+    background-color:grey;
+    color:black;
+    margin-left:5px;
+}
+
+.documentInfo input[type=file]{
+   font-size:15px;
+}
+.documentInfo  button[type=button]{
+    font-size:15px;
+}
+.documentInfo label{
+    font-size:14px;
+    font-weight:200;
+}
+#documentList{
+    font-size:18px;
+}
+.tbl_update{
+    color:yellow;
+
+}
+
+
+#claimDescriptionInner{
+    font-size:20px;
+    width:50%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.claimInfo{
+    padding-top:150px;
+    padding-left:100px;
+    color:black;
+    font-size:10px;
+    height:100%;
+    background-color:#f5f5f5bd !important;
+}
+
+.claimInfo > button, input, select, textarea {
+    font-size:15px;
+}
+
+.claimInfo input[type=text]{
+   width:400px;
+   height:30px;
+   font-size:15px;
+   background-color:grey;
+   color:black;
+   margin-left:5px;
+}
+.claimInfo input[type=text] {
+    width:200px;
+}
+
+.chatGptInfo{
+    padding-top:150px;
+    margin-left:100px;
+    color:black;
+
+}
+
+table#tbl_claimList  {
+    font-size:20px important;
+}
+
+#tbl_claimList table thead{
+    font-weight:normal important;
+}
+
+#tbl_claims {
+    font-size:20px;
+}
+
+element.style {
+height:1700px;
+}
+.modal-body input[type=text]{
+    color:black;
+}
